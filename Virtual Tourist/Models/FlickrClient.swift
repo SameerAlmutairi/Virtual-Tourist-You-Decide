@@ -43,7 +43,7 @@ class FlickrClient {
                 completion(response.photos.photo, nil)
             }
             else {
-                print(error!)
+                completion(nil,error)
             }
         }
     }
