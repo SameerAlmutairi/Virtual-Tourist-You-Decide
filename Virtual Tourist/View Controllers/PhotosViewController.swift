@@ -30,18 +30,35 @@ class PhotosViewController: UIViewController, UICollectionViewDelegateFlowLayout
         }
         return false
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
+    override func viewDidLoad() {
+        //Define Layout here
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        //Get device width
+        let width = UIScreen.main.bounds.width
+        
+        //set section inset as per your requirement.
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 0)
+        
+        //set cell item size here
+        layout.itemSize = CGSize(width: width / 2, height: width / 2)
+        
+        //set Minimum spacing between 2 items
+        layout.minimumInteritemSpacing = 0
+        
+        //set minimum vertical line spacing here between two lines in collectionview
+        layout.minimumLineSpacing = 0
+        
+        //apply defined layout to collectionview
+        collectionView!.collectionViewLayout = layout
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupFetchedResultController()
         collectionView.reloadData()
     }
-    
-    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -101,10 +118,10 @@ class PhotosViewController: UIViewController, UICollectionViewDelegateFlowLayout
                 self.updateView(false)
                 if error != nil  {
                     print(error)
+                    Helper.displayAlertMessage(self, "", error?.localizedDescription ?? "Cannot get Photos")
                     return
                 }
                 guard let response = response  else {
-//                    self.labelMessage.isHidden = false
                     return
                 }
                 if response.count == 0 {

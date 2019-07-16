@@ -21,6 +21,7 @@
 		78A8A39122A3796B00AD4DD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8A39022A3796B00AD4DD1 /* MapViewController.swift */; };
 		78A8A39322A3798000AD4DD1 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8A39222A3798000AD4DD1 /* PhotosViewController.swift */; };
 		78BB9BD822A38CC900854825 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB9BD722A38CC900854825 /* PhotoCell.swift */; };
+		78FB47B722DE466D00E6A9BC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB47B622DE466D00E6A9BC /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		78A8A39022A3796B00AD4DD1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		78A8A39222A3798000AD4DD1 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		78BB9BD722A38CC900854825 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		78FB47B622DE466D00E6A9BC /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				7808557522C6C6FC0085FAED /* PhotoDetails.swift */,
 				7808557722C6C9FE0085FAED /* PhotosObj.swift */,
 				7808557922C6CB170085FAED /* PhotosResponse.swift */,
+				78FB47B622DE466D00E6A9BC /* Helpers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				7808557622C6C6FC0085FAED /* PhotoDetails.swift in Sources */,
 				78A8A36B22A337AA00AD4DD1 /* AppDelegate.swift in Sources */,
 				7808557A22C6CB170085FAED /* PhotosResponse.swift in Sources */,
+				78FB47B722DE466D00E6A9BC /* Helpers.swift in Sources */,
 				78BB9BD822A38CC900854825 /* PhotoCell.swift in Sources */,
 				78A8A38822A3431600AD4DD1 /* Pin+Extension.swift in Sources */,
 				78A8A39322A3798000AD4DD1 /* PhotosViewController.swift in Sources */,

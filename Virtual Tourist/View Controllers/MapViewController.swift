@@ -29,9 +29,6 @@ class MapViewController: UIViewController {
         setupFetchedResultController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         fetchedResultsController = nil
