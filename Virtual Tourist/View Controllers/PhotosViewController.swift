@@ -134,6 +134,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegateFlowLayout
                     let photo = Photo(context: self.dataController.viewContext)
                     photo.imageURL = responseURL.photoURL
                     photo.pin = self.selectedPin
+                    photo.imageData = try! NSData(contentsOf: URL(string: photo.imageURL!)!) as Data
                 }
                 try? self.dataController.viewContext.save()
             }
@@ -158,12 +159,21 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         let photo = fetchedResultsController.object(at: indexPath)
-        cell.cellActivityindicator.startAnimating()
-        if let data = NSData(contentsOf: URL(string: photo.imageURL!)!){
-            cell.imageView.image = UIImage(data: data as Data)
+//        cell.cellActivityindicator.startAnimating()
+//        if let data = NSData(contentsOf: URL(string: photo.imageURL!)!){
+//            cell.imageView.image = UIImage(data: data as Data)
+//        }
+//        cell.cellActivityindicator.stopAnimating()
+        if photo == nil {
+            cell.cellActivityindicator.startAnimating()
+            if let data = NSData(contentsOf: URL(string: photo.imageURL!)!){
+                cell.imageView.image = UIImage(data: data as Data)
+            }
+            cell.cellActivityindicator.stopAnimating()
         }
-        cell.cellActivityindicator.stopAnimating()
-        
+        else {
+            cell.imageView.image = UIImage(data: photo.imageData!)
+        }
         return cell
     }
     
